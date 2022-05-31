@@ -1,0 +1,137 @@
+<template>
+	<lightning-card variant="Narrow" title="Weather in your city" icon-name="standard:account">
+		<p class="slds-p-horizontal_small">
+
+			<lightning-input onchange={getInput} type="text" variant="standard" name="name" value={inputCity}
+				style="width:20%;" class="slds-m-bottom_x-small slds-m-left_x-small" placeholder="Enter City...">
+			</lightning-input>
+			<lightning-button variant="brand" label="Search" title="Search Temperature" onclick={handleSearch}
+				class="slds-m-left_x-small slds-p-arround_x-small">
+			</lightning-button>
+
+			<template if:true={feels_like} slot="body">
+				<br/><br/>
+				<p if:true={feels_like} style="color:blue; margin-left:10px; font-weight: 600;"> Feels Like :
+					{feels_like}</p>
+				<p if:true={grnd_level} style="color:blue; margin-left:10px; font-weight: 600;">Grand Level :
+					{grnd_level}</p>
+				<p if:true={humidity} style="color:blue; margin-left:10px; font-weight: 600;">Humidity : {humidity}</p>
+				<p if:true={pressure} style="color:blue; margin-left:10px; font-weight: 600;">Pressure : {pressure}</p>
+				<p if:true={sea_level} style="color:blue; margin-left:10px; font-weight: 600;">Sea Level : {sea_level}
+				</p>
+				<p if:true={temperature} style="color:blue; margin-left:10px; font-weight: 600;">Temperature :
+					{temperature}</p>
+				<p if:true={temp_max} style="color:blue; margin-left:10px; font-weight: 600;">Maximum Temperature :
+					{temp_max}</p>
+				<p if:true={temp_min} style="color:blue; margin-left:10px; font-weight: 600;">Minimum Temperature :
+					{temp_min}</p>
+			</template>
+
+			<template if:true={isRecordAvailable}>
+				<br/><br/><b style="color:red; margin-left:10px;">No City Found!</b>
+			</template>
+
+			<template if:true={isFirstTime}>
+				<br/><br/><b style="color:green; margin-left:10px;">Result is shown here...!</b>
+			</template>
+
+		</p>
+		<p slot="footer">Weather Result</p>
+	</lightning-card><br/><br/>
+
+	<lightning-card variant="Narrow">
+		<div
+			style="color: white; background: #00a1e0; text-align: center; padding: 20px; font-size: 22px; font-weight: 700; border-radius: 10px;">
+			Unistallation</div>
+
+		<table border="border: 1px solid black;">
+			<tr>
+				<td>
+					Lorem Ipsum is simply dummy text of the printing and
+				</td>
+				<td>
+					Lorem Ipsum is simply dummy text of the printing and
+				</td>
+				<td>
+					Lorem Ipsum is simply dummy text of the printing and
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Lorem Ipsum is simply dummy text of the printing and
+				</td>
+				<td>
+					Lorem Ipsum is simply dummy text of the printing and
+				</td>
+				<td>
+					Lorem Ipsum is simply dummy text of the printing and
+				</td>
+			</tr>
+
+		</table>
+
+		<p align="center">
+			<lightning-button-icon icon-name="utility:delete" variant="brand" alternative-text="Delete"
+				class="slds-m-left_xx-small" title="Delete" style="background: #00a1e0; ma">
+			</lightning-button-icon>
+		</p>
+
+		<p slot="footer">Card Footer</p>
+	</lightning-card><br/><br/>
+
+
+
+	<lightning-card>
+		<lightning-layout horizontal-align="space">
+			<lightning-layout-item padding="around-small" style="margin-left: -20px;">
+				<button class="slds-button slds-button_neutral" title="Settings" style="width:130%;">
+                    <svg class="slds-button__icon slds-button__icon--left" aria-hidden="true">
+                        <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#settings"></use>
+                    </svg>
+                    <label>Go to settings</label>
+                    <span class="slds-p-left_xx-large">1</span>
+                </button>
+			</lightning-layout-item>
+			<lightning-layout-item padding="around-small" style="margin-left: 18px;">
+				<button class="slds-button slds-button_neutral" title="add" style="width:108%;">
+                    <svg class="slds-button__icon slds-button__icon--left" aria-hidden="true">
+                        <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#add"></use>
+                    </svg>
+                    <label>Go to the quick box</label>
+                    <span class="slds-p-left_xx-large">2</span>
+                </button>
+			</lightning-layout-item>
+		</lightning-layout>
+
+		<lightning-layout horizontal-align="space">
+			<lightning-layout-item padding="around-small">
+				<button class="slds-button slds-button_neutral" title="Settings">
+                    <svg class="slds-button__icon slds-button__icon--left" aria-hidden="true">
+                        <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#settings"></use>
+                    </svg>
+                    <label>Go to package manager</label>
+                    <span class="slds-p-left_xx-large">3</span>
+                </button>
+			</lightning-layout-item>
+			<lightning-layout-item padding="around-small">
+				<button class="slds-button slds-button_neutral" title="add" style="width:15rem;">
+                    <svg class="slds-button__icon slds-button__icon--left" aria-hidden="true">
+                        <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#add"></use>
+                    </svg>
+                    <label>Uninstall package</label>
+                    <span class="slds-p-left_xx-large">4</span>
+                </button>
+			</lightning-layout-item>
+		</lightning-layout>
+
+		<div style="text-align: center;">
+			<p>Not-Lorem Ipsum is simpaly dummy text of the printing and typosetting industry. Lorem Ipsum has been the
+				industry's</p>
+		</div>
+		<div style="text-align: center;margin-top: 20px;">
+			<lightning-button label="OK" variant="brand"></lightning-button>
+		</div>
+		
+	</lightning-card><br/><br/>
+
+</template>
